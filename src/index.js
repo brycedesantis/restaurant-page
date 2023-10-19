@@ -1,7 +1,3 @@
-function component() {
-    const element = document.createElement('div')
+import createHeader from "./skeleton.js";
 
-    element.textContent = 'Hello World'
-
-    return element
-}
+createHeader()

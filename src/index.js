@@ -5,7 +5,3 @@ function component() {
 
     return element
 }
-
-const content = document.querySelector('#content')
-
-content.appendChild(component())

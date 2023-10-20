@@ -1,3 +1,3 @@
-import createHeader from "./skeleton.js";
+import buildSite from "./skeleton.js";
 
-createHeader()
+buildSite()

@@ -1,61 +1,63 @@
-export default function createHeader() {
-    const content = document.querySelector('#content')
+import homePage from "./about"
+
+function createHeader() {
     const header = document.createElement('header')
     const restName = document.createElement('h1')
-
-    restName.textContent = `Zaza's za casa`
-
-    header.appendChild(addLogo())
-    header.appendChild(restName)
-    header.appendChild(addNav())
-    header.appendChild(addDescription())
-
-    content.appendChild(header)
-}
-
-function addLogo() {
     const headerIcon = document.createElement('img')
-    headerIcon.src = 'images/pizza-icon.png'
+    headerIcon.src = 'assets/pizza-icon.png'
     headerIcon.style.width = '90px'
 
-    return headerIcon
+    restName.textContent = `Zaza's Za`
+
+    header.appendChild(headerIcon)
+    header.appendChild(restName)
+    header.appendChild(addNav())
+    
+    return header
 }
 
 function addNav() {
+    const main = document.querySelector('.main')
     const nav = document.createElement('nav')
 
-    const pages = [
-        'Menu',
-        'About',
-        'Contact Us'
-    ]
-
-    pages.forEach((page) => {
-        let pageLink = document.createElement('a')
-        pageLink.textContent = `${page}`
-        nav.appendChild(pageLink)
+    const homeButton = document.createElement('button')
+    homeButton.textContent = 'Home'
+    homeButton.addEventListener('click', (event) => {
+        console.log('home page')
     })
+
+    const menuButton = document.createElement('button')
+    menuButton.textContent = 'Menu'
+    menuButton.addEventListener('click', () => {
+        console.log('menu page')
+    })
+
+    const contactButton = document.createElement('button')
+    contactButton.textContent = 'Contact Us'
+    contactButton.addEventListener('click', () => {
+        console.log('contact page')
+    })
+
+    nav.appendChild(homeButton)
+    nav.appendChild(menuButton)
+    nav.appendChild(contactButton)
 
     return nav
 }
 
-function addDescription() {
-    const section = document.createElement('section')
-    const article = document.createElement('article')
-    const title = document.createElement('h3')
-    const chef = document.createElement('img')
-    const paragraph = document.createElement('p')
+function createMain() {
+    let main = document.createElement('main')
+    main.className = 'main'
 
-    title.textContent = `Welcome to "Mamma Mia Pizzeria" – Where Every Slice Tells a Delicious Tale!`
-    chef.src = 'images/pizza-chef.jpg'
-    chef.style.width = '200px'
-    paragraph.textContent = `At Mamma Mia Pizzeria, we are dedicated to crafting the most exquisite, mouthwatering pizzas that transport your taste buds straight to Italy. Nestled in the heart of our charming, family-friendly neighborhood, our restaurant offers a warm and inviting atmosphere, reminiscent of an authentic Italian trattoria.`
-
-    article.appendChild(title)
-    article.appendChild(chef)
-    article.appendChild(paragraph)
-
-    section.appendChild(article)
-
-    return section
+    return main
 }
+
+function buildSite() {
+    const content = document.querySelector('#content')
+
+    content.appendChild(createHeader())
+    content.appendChild(createMain())
+    homePage()
+}
+
+export default buildSite

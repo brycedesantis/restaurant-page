@@ -1,5 +1,6 @@
-import homePage from "./about"
-import menuPage from "./menu"
+import renderHome from "./about"
+import renderMenu from "./menu"
+import renderContact from "./contact"
 
 function createHeader() {
     const header = document.createElement('header')
@@ -24,25 +25,25 @@ function createHeader() {
 }
 
 function addNav() {
-    const main = document.querySelector('.main')
+    const main = document.querySelector('main')
     const nav = document.createElement('nav')
 
     const homeButton = document.createElement('button')
     homeButton.textContent = 'Home'
-    homeButton.addEventListener('click', (event) => {
-        console.log('home page')
+    homeButton.addEventListener('click', () => {
+        renderHome();
     })
 
     const menuButton = document.createElement('button')
     menuButton.textContent = 'Menu'
     menuButton.addEventListener('click', () => {
-        console.log('menu page')
+        renderMenu()
     })
 
     const contactButton = document.createElement('button')
     contactButton.textContent = 'Contact Us'
     contactButton.addEventListener('click', () => {
-        console.log('contact page')
+        renderContact()
     })
 
     nav.appendChild(homeButton)
@@ -64,7 +65,7 @@ function buildSite() {
 
     content.appendChild(createHeader())
     content.appendChild(createMain())
-    menuPage()
+    renderHome()
 }
 
 export default buildSite

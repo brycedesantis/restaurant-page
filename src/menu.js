@@ -1,5 +1,4 @@
 function menuPage() {
-    const main = document.querySelector('.main')
     const menu = document.createElement('div')
     menu.className = 'menu'
 
@@ -27,7 +26,7 @@ function menuPage() {
         createMenuItem('Nutella', 'A delicious dessert pizza that rounds out the Zaza\'s experience.')
     )
     
-    main.appendChild(menu)
+    return menu
 }
 
 function createMenuItem(item, description) {
@@ -53,4 +52,10 @@ function createMenuItem(item, description) {
     return menuItem
 }
 
-export default menuPage
+function renderMenu() {
+    const main = document.querySelector('.main')
+    main.innerHTML = ''
+    main.appendChild(menuPage())
+}
+
+export default renderMenu

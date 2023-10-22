@@ -14,6 +14,11 @@ header {
     width: 90px;
 }
 
+.logo > h1 {
+    padding-left: 25px;
+    font-size: 2.7em;
+}
+
 nav {
     padding: 0 50px;
 }
@@ -26,6 +31,40 @@ nav > button {
 .main {
     margin: 0 auto;
     width: 60vw;
+}
+
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chef-img {
+    width: 250px;
+}
+
+.about-section {
+    display: grid;
+    grid-template: 1fr 1fr / repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 20px;
+    padding-top: 20px;
+}
+
+article {
+    padding: 0 15px 15px;
+    border: 1px solid black;
+}
+
+.title {
+    padding: 10px;
+    border: 1px solid black;
+    width: fit-content; 
+}
+
+.desc {
+    width: 450px;
+    font-size: 1.1em;
 }
 
 .menu-img {
@@ -50,4 +89,19 @@ nav > button {
 
 .item-desc {
     width: 250px;
+    height: 60px;
+}
+
+.contact-div {
+    border: 1px solid black;
+    margin: 10em auto 0;
+    width: 50%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+.interior-img {
+    width: auto;
+    height: 300px;
 }

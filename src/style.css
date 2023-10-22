@@ -1,8 +1,28 @@
+:root {
+    --header-color: #22181C;
+    --main-color: #312F2F;
+    --titles-color: #F6E8EA;
+    --border-color: #84DCCF;
+    --accent-color: #EF626C;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--titles-color);
+    background-color: var(--main-color);
+}
+
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5em;
+    padding: 1.5em;
+    background-color: var(--header-color);
 }
 
 .logo {
@@ -26,11 +46,17 @@ nav {
 nav > button {
     margin: 10px;
     font-size: 30px;
+    padding: 0 5px;
+    border: 1px solid var(--border-color);
+    color: var(--titles-color);
+    background-color: var(--main-color);
+    cursor: pointer;
 }
 
 .main {
     margin: 0 auto;
     width: 60vw;
+    margin-bottom: 1.5em;
 }
 
 .home-page {
@@ -52,14 +78,16 @@ nav > button {
 }
 
 article {
-    padding: 0 15px 15px;
-    border: 1px solid black;
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 10px;
 }
 
 .title {
     padding: 10px;
-    border: 1px solid black;
-    width: fit-content; 
+    border: 1px solid var(--accent-color);
+    width: fit-content;
+    margin-bottom: 10px;
 }
 
 .desc {
@@ -70,6 +98,7 @@ article {
 .menu-img {
     height: auto;
     width: 150px;
+    padding-bottom: 15px;
 }
 
 .menu{
@@ -87,13 +116,19 @@ article {
     flex-direction: column;
 }
 
+.menu-item > h3 {
+    border: 1px solid var(--accent-color);
+    padding: 5px;
+}
+
 .item-desc {
     width: 250px;
     height: 60px;
+    padding-top: 10px;
 }
 
 .contact-div {
-    border: 1px solid black;
+    border: 1px solid var(--border-color);
     margin: 10em auto 0;
     width: 50%;
     padding: 25px;
@@ -101,7 +136,12 @@ article {
     flex-direction: column;
 }
 
+.contact-div > * {
+    padding: 10px;
+}
+
 .interior-img {
     width: auto;
     height: 300px;
+    border-radius: 30px;
 }

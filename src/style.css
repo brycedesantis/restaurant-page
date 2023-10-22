@@ -1,0 +1,53 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5em;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-img {
+    width: 90px;
+}
+
+nav {
+    padding: 0 50px;
+}
+
+nav > button {
+    margin: 10px;
+    font-size: 30px;
+}
+
+.main {
+    margin: 0 auto;
+    width: 60vw;
+}
+
+.menu-img {
+    height: auto;
+    width: 150px;
+}
+
+.menu{
+    display: grid;
+    grid-template: 1fr 1fr /repeat(3, 1fr);
+    padding: 10px;
+    gap: 12px;
+}
+
+.menu-item {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.item-desc {
+    width: 250px;
+}

@@ -1,16 +1,23 @@
 import homePage from "./about"
+import menuPage from "./menu"
 
 function createHeader() {
     const header = document.createElement('header')
+    const logo = document.createElement('div')
     const restName = document.createElement('h1')
     const headerIcon = document.createElement('img')
+
+    logo.className = 'logo'
+
     headerIcon.src = 'assets/pizza-icon.png'
-    headerIcon.style.width = '90px'
+    headerIcon.className = 'header-img'
 
     restName.textContent = `Zaza's Za`
+    
+    logo.appendChild(headerIcon)
+    logo.appendChild(restName)
 
-    header.appendChild(headerIcon)
-    header.appendChild(restName)
+    header.appendChild(logo)
     header.appendChild(addNav())
     
     return header
@@ -57,7 +64,7 @@ function buildSite() {
 
     content.appendChild(createHeader())
     content.appendChild(createMain())
-    homePage()
+    menuPage()
 }
 
 export default buildSite
